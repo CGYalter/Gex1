@@ -1,0 +1,239 @@
+:root {
+    --bg: #f8f3e8;
+    --ink: #2f2a24;
+    --ink-soft: #6f665b;
+    --primary: #c66b3d;
+    --primary-dark: #9f512d;
+    --card: #fffdf8;
+    --line: #e9dcc4;
+    --shadow: 0 10px 30px rgba(59, 39, 22, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 10% 10%, #fff5de 0%, rgba(255, 245, 222, 0) 45%),
+        radial-gradient(circle at 90% 20%, #fce2cb 0%, rgba(252, 226, 203, 0) 40%),
+        linear-gradient(180deg, #f8f3e8 0%, #f6efe0 100%);
+    line-height: 1.7;
+}
+
+.hero,
+.main-content,
+.nav ul {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero {
+    padding: 2.4rem 1.25rem 1rem;
+    position: relative;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.ponyo-gif {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    object-fit: cover;
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2rem, 3.8vw, 3rem);
+    letter-spacing: 0.04em;
+    color: var(--primary-dark);
+}
+
+.hero video {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    display: block;
+}
+
+.totoro-decor {
+    position: absolute;
+    right: 1.2rem;
+    bottom: -10px;
+    width: 110px;
+    opacity: 0.9;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
+}
+
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(248, 243, 232, 0.8);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.75rem 1.25rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--primary-dark);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    transition: all 0.2s ease;
+}
+
+.nav a:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.main-content {
+    margin-top: 1.4rem;
+    padding: 0 1.25rem 2.5rem;
+}
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.movie {
+    background: linear-gradient(180deg, var(--card) 0%, #fff8ee 100%);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(60, 37, 16, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.movie:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 24px rgba(60, 37, 16, 0.14);
+}
+
+.movie img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.movie-info {
+    padding: 1rem;
+}
+
+.movie-info h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.08rem;
+    line-height: 1.35;
+    color: var(--primary-dark);
+}
+
+.movie-info p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+}
+
+.maestro {
+    margin-top: 2rem;
+    background: linear-gradient(120deg, #fff7e8 0%, #ffe9d3 100%);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 8px 16px rgba(55, 35, 20, 0.2);
+}
+
+.quote p {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.quote span {
+    display: inline-block;
+    margin-top: 0.45rem;
+    color: #7a5238;
+    letter-spacing: 0.05em;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.footer {
+    border-top: 1px solid var(--line);
+    text-align: center;
+    padding: 1rem 1.25rem 1.6rem;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 1.5rem;
+    }
+
+    .totoro-decor {
+        width: 82px;
+        right: 0.5rem;
+        bottom: -4px;
+    }
+
+    .nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .movie img {
+        height: 280px;
+    }
+
+    .maestro {
+        flex-direction: column;
+        text-align: center;
+    }
+}
